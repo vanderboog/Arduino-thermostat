@@ -1,8 +1,7 @@
 #ifndef PIDCONTROL_H
 #define PIDCONTROL_H
 
-#include <Arduino.h>
-#include "pins.h"
+
 
 class PidControl{
     ///////////////////////////////////////////

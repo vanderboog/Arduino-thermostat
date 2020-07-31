@@ -1,4 +1,6 @@
+#include <Arduino.h>
 #include "pidcontrol.h"
+#include "pins.h"
 
 PidControl::PidControl() : 
 k_p(1.0),

@@ -1,16 +1,6 @@
 #ifndef THERMOSTAT_H
 #define THERMOSTAT_H
 
-#include <Arduino.h>
-#include <Servo.h>
-#include <Wire.h>              // Library for I2C communication
-#include <LiquidCrystal_I2C.h> // Library for LCD
-#include <OneWire.h>           // Required for temperature sensor
-#include <DallasTemperature.h> // Required for temperature sensor
-#include "clock.h"
-#include "pins.h"
-#include "objects.h"
-#include "button.h"
 #include "pidcontrol.h"
 
 class Thermostat

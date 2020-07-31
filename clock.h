@@ -1,9 +1,8 @@
 #ifndef CLOCK_H
 #define CLOCK_H
 
-#include <Arduino.h>
 #include <LiquidCrystal_I2C.h> // Library for LCD
-#include "pins.h"
+
 #include "button.h"
 
 class Clock {

@@ -1,3 +1,4 @@
+#include <Arduino.h>
 #include "button.h"
 
 Button::Button(byte pin) {

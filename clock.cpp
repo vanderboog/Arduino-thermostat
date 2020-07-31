@@ -1,4 +1,6 @@
+#include <Arduino.h>
 #include "clock.h"
+#include "pins.h"
 
 Clock::Clock() : 
 timeNow(0),

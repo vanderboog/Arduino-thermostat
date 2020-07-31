@@ -1,3 +1,13 @@
+#include <Arduino.h>
+#include <Servo.h>
+#include <Wire.h>              // Library for I2C communication
+#include <LiquidCrystal_I2C.h> // Library for LCD
+#include <OneWire.h>           // Required for temperature sensor
+#include <DallasTemperature.h> // Required for temperature sensor
+#include "clock.h"
+#include "pins.h"
+#include "objects.h"
+#include "button.h"
 #include "thermostat.h"
 
 Thermostat::Thermostat() : 
@@ -144,6 +154,7 @@ void Thermostat::mode1()
       break; 
     } // Button does not respond if code takes to long
 
+    clock.update();
     lcdDisplay();
   }
 }
@@ -154,6 +165,7 @@ void Thermostat::mode2_3()
   clock.update();
   clockTime = clock.getClockTime();
   setLcdTimer = (long)(clock.getClockTime() + (clock.getSeconds() + setBackLightTimer) / 60) * 100 + (clock.getSeconds() + setBackLightTimer) % 60; // Calculation more difficult due to clock.getSeconds() to minute conversion
+  outServo = 0;
 
   while (!button1.isPressed()) // Trap program in this mode untill button press
   {
